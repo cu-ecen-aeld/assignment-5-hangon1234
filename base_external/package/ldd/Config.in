@@ -1,0 +1,6 @@
+
+config BR2_PACKAGE_LDD
+	bool "ldd"
+	help
+          Building and installing misc-modules and scull components
+	  Used to understand buildroot building kernel resources. 
