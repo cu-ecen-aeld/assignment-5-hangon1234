@@ -10,7 +10,7 @@ mode="664"
 case "$1" in
     start)
         # Change directory to the module directory
-        cd /lib/modules
+        cd /lib/modules/$( uname -r )/extra
 
         module="scull"
         device="scull"
