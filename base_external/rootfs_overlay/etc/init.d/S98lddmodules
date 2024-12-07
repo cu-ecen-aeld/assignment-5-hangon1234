@@ -131,7 +131,7 @@ case "$1" in
         device="scull"
         
         # invoke rmmod with all arguments we got
-        rmmod $module $* || exit 1
+        rmmod $module || echo "module $module does not exist"
         
         # Remove stale nodes
         
@@ -144,13 +144,13 @@ case "$1" in
         echo "finished unloading scull device"
 
         echo "now remove faulty device driver"
-        rmmod faulty || exit 1
+        rmmod faulty || echo "module faulty does not exist"
         rm -f /dev/faulty
         echo "finished unloading faulty device driver"
 
         # unloading hello world module
         echo "now remove hello world device driver"
-        rmmod hello || exit 1
+        rmmod hello || echo "module hello does not exist"
         rm -rf /dev/hello
         echo "finished unloading hello world device driver"
         ;;
